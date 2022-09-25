@@ -1,0 +1,71 @@
+.SignUp{
+  position: relative;
+    margin: auto;
+    display:flex;
+    justify-content: center;
+    top: 5rem
+}
+
+.signUp_container {
+    padding: 16px;
+  }
+
+.signUp_form{
+    width: fit-content;
+}
+
+/* Full-width input fields */
+  .signUp_atext, .signUp_ptext, .signUp_ntext {
+    width: 95%;
+    padding: 15px;
+    margin: auto;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+.signUp_container>input {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all .signupbtns */
+.signupbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  margin: 21px;
+  
+}
+
+.signupbtn:hover {
+  opacity:1;
+}
+
+/* Float cancel and signup .signupbtns and add an equal width */
+.signupbtn {
+  width: 50%;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel .signupbtn and signup .signupbtn on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}

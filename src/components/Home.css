@@ -1,0 +1,49 @@
+.home{
+  padding: 0;
+}
+.home_table {
+    gap: 10px;
+    padding: 1rem;
+  }
+  
+  .home_tableuser {
+    border-collapse: collapse;
+    display: flex;
+    padding:10px;
+  }
+
+  .home_row{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home_headcol,
+  .home_bodycol {
+    border: 1px solid #ffffff;
+    text-align: left;
+    padding: 14px;
+    font-size: 32px;
+  }
+  
+  .home_head,.home_body{
+    width: 100%;
+  }
+  .home_headcol {
+    background-color: rgb(117, 201, 250);
+  }
+  
+  .home_bodycol {
+    background-color: rgb(205, 235, 253);
+  }
+
+  .openModalDeposit{
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }

@@ -1,0 +1,83 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(184, 182, 182, 0.85);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+  }
+  
+  .modalContainer {
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .modal_title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .modal_body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  
+  .modalContainer .modal_footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #transferBtn {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+.modal_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_acc,
+.modal_cred{
+    margin: 35px 0;
+}
+
+#accountNo,
+#credits{
+    padding: 8px;
+}

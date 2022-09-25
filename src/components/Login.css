@@ -1,0 +1,33 @@
+.loginScreen{
+    position: relative;
+    display: flex;
+    margin: auto;
+    top: 8rem;
+    width: fit-content;
+    border: 2px solid;
+    flex-direction: column;
+}
+
+.Login_form{
+    width: 31rem;
+    height: 20rem;
+    font-size: 3vh;
+}
+
+.Login_form >div{
+    padding: 40px 0;
+}
+
+.Login_form>div>label{
+    margin: 0 20px;
+}
+
+.login_signup{
+    text-decoration: underline;
+    padding: 5px;
+}
+
+.login_signup:hover{
+    cursor: pointer;
+    color: coral;
+}

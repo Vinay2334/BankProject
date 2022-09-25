@@ -2,6 +2,9 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
 const transactionSchema= new Schema ({
+    message:{
+        type: String
+    },
     user:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
@@ -17,6 +20,10 @@ const transactionSchema= new Schema ({
     transfer : {
         type : Number,
         required: true
+    },
+    date:{
+        type:Date,
+        default:Date.now
     }
 })
 
