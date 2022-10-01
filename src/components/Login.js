@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
 import "./Login.css"
 import Signup from './Signup'
 import { ToastContainer, toast } from 'react-toastify';
@@ -8,13 +7,14 @@ import 'react-toastify/dist/ReactToastify.css';
 function LoginScreen() {
   const [credentials, setcredentials] = useState({accNo:"",password:""})
   const [SignIn, setSignIn] = useState(false)
+  const host=process.env.PORT || "http://localhost:3000"
   const onChange=(e)=>{
     setcredentials({...credentials,[e.target.name]: e.target.value})
   }
 
   const handleSubmit=async(e)=>{
     e.preventDefault()
-      const response=await fetch(`http://localhost:3000/api/auth/login`,{
+      const response=await fetch(`${host}/api/auth/login`,{
           method:'POST',
           headers:{
             'Content-Type': 'application/json',

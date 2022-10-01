@@ -2,6 +2,7 @@ import React, {useContext,useState}  from 'react'
 import TranContext from '../../context/transactions/tranContext'
 import './Modal.css'
 import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 function Modal({closeModal}) {
     const context = useContext(TranContext)
@@ -13,13 +14,35 @@ function Modal({closeModal}) {
     }
     const handleClick=(e)=>{
       e.preventDefault()
+      if(Trans>0){
       depositMoney(Trans)
       closeModal(false)
-        window.location.reload()
+      toast.success("Amount deposited successfully!", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
       }
+      else{
+        toast.error("Please enter Valid Amount", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
+      }
+      }     
 
   return (
     <div className='modalBackground'>
+      <ToastContainer/>
       <div className='modalContainer'>
         <div className="titleCloseBtn">
         <button onClick={()=> closeModal(false)}>X</button>

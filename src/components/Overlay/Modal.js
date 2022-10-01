@@ -3,10 +3,8 @@ import TranContext from '../../context/transactions/tranContext'
 import './Modal.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useNavigate } from 'react-router-dom';
 
 function Modal({closeModal}) {
-  const navigate=useNavigate()
     const context = useContext(TranContext)
     const {alluser,transaction}= context
     const [Trans, setTrans] = useState({credit: "", accountNo: ""})
@@ -16,11 +14,13 @@ function Modal({closeModal}) {
     }
 
     function checkAccNo(user){
-      if(alluser[user].accountNo==Trans.accountNo && alluser[user].balance > Trans.credit){
+      // eslint-disable-next-line
+      if(alluser[user].accountNo==Trans.accountNo && alluser[user].balance > Trans.credit &&Trans.credit!=0){
         return true
       }
       else{
-        return user++
+        if(user<(alluser.length-1)){
+        return checkAccNo(user+1)}
       }
     }
 
@@ -50,7 +50,6 @@ function Modal({closeModal}) {
             progress: undefined,
             });
       }
-      navigate('/customers')
     }
 
   return (

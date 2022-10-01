@@ -100,7 +100,7 @@ router.post('/login', [
 router.post('/getuser', fetchuser,  async (req, res) => {
 
   try {
-   const userId = req.user.id;
+    userId = req.user.id;
     const user = await User.findById(userId).select("-password")
     res.json(user)
   } catch (error) {
@@ -110,18 +110,4 @@ router.post('/getuser', fetchuser,  async (req, res) => {
 })
 
 
-// router.get('/signOut',fetchuser,async (req,res)=>{
-//   let user = await User.findById(req.user.id)
-//   const data = {
-//     user: {
-//       id: user.id
-//     }
-//   }
-//   const authtoken = jwt.sign(data, JWT_SECRET);
-//   res.send(authtoken='null')
-// (err,user)=>{
-//     if(err) return res.status(400).send(err);
-//     res.sendStatus(200);
-// })
-//})
 module.exports=router

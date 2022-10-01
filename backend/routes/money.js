@@ -3,7 +3,6 @@ const router = express.Router();
 const fetchuser = require('../middleware/fetchuser');
 const Transaction = require('../models/Transaction');
 const User = require('../models/User')
-const { body, validationResult } = require('express-validator');
 
 router.get('/view', async (req, res) => {
     try {
@@ -31,7 +30,7 @@ router.put('/view/depositMoney',fetchuser,async(req,res)=>{
             transfer : addMoney
         })
         await newTransaction.save()
-        res.redirect(303,"http://localhost:3000/api/transactions/view");
+         res.json(await User.findById(req.user.id))
     }
         else{
             return res.status(400).json({error: "Enter a Valid amount" })
@@ -93,7 +92,7 @@ router.put(`/view/transferMoney`,fetchuser, async(req,res)=>{
                        transfer : credit
                    });
                    await newTransactionReceiver.save();
-                   res.redirect(303,"http://localhost:3000/api/transactions/view");
+                   res.redirect(303,"/api/transactions/view");
                  }
                  else{
                      if(credit<=0 || typeof credit === 'string'){return res.status(400).json({error: "Please Enter Valid amount" }) }

@@ -1,7 +1,8 @@
 import TranContext from "./tranContext";
 import { useState } from "react";
 const TranState = (props)=>{
-    const host="http://localhost:3000"
+    // const host=process.env.PORT || "http://localhost:3000"
+    const host=process.env.PORT || "http://localhost:3000"
     const userInitial=[]
     const [users, setusers] = useState(userInitial);
     const [trans, settrans] = useState([]);
@@ -24,7 +25,6 @@ const TranState = (props)=>{
             method:'GET'
             });
             const json = await response.json();
-            console.log(json)
             setalluser(json)
     }
     const getTrans = async()=>{
@@ -61,7 +61,7 @@ const TranState = (props)=>{
             body: JSON.stringify({addMoney})
             });
             const json= await response.json()
-            setalluser(json)
+            setusers(json)
         }
 
     return(

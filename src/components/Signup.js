@@ -5,13 +5,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Signup(props) {
     const [credentials, setcredentials] = useState({accNo:"",password:"",name:""})
+    const host=process.env.PORT || "http://localhost:3000"
     const onChange=(e)=>{
         setcredentials({...credentials,[e.target.name]:e.target.value})
     }
 
     const handleSubmit= async(e)=>{
         e.preventDefault()
-        const response=await fetch(`http://localhost:3000/api/auth/createuser`,{
+        const response=await fetch(`${host}/api/auth/createuser`,{
           method:'POST',
           headers:{
             'Content-Type': 'application/json',

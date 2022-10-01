@@ -6,7 +6,7 @@ function Nav() {
   const navigate= useNavigate()
   const handleLogout=()=>{
     localStorage.removeItem('token')
-    window.location.reload()
+    window.location.assign('/')
   }
   return (
     <div className="nav">
